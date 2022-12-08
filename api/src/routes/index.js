@@ -7,8 +7,8 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.use("/country", countryRoutes);
-router.use("/activity", activityRoutes);
+router.use("/countries", countryRoutes);
+router.use("/activities", activityRoutes);
 
 router.get("/", (req, res) => {
   res.send("soy la ruta principal");

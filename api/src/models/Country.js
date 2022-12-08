@@ -9,6 +9,7 @@ module.exports = (sequelize) => {
       id: {
         type: DataTypes.STRING,
         primaryKey: true,
+        allowNull: false,
       },
       nombre: {
         type: DataTypes.STRING,
@@ -28,15 +29,12 @@ module.exports = (sequelize) => {
       },
       subregion: {
         type: DataTypes.STRING,
-        allowNull: false,
       },
       area: {
         type: DataTypes.INTEGER,
-        allowNull: false,
       },
       poblacion: {
         type: DataTypes.INTEGER,
-        allowNull: false,
       },
     },
     {
