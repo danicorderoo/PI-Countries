@@ -1,7 +1,6 @@
 const axios = require("axios");
 
 const getData = (req, res, Country) => {
-  console.log("DB inicializada");
   axios
     .get("https://restcountries.com/v3.1/all")
     .then((countries) => {
@@ -11,17 +10,17 @@ const getData = (req, res, Country) => {
         bandera: country.flags.png,
         continente: country.region,
         subregion: country.subregion,
-        capital: country.capital || "Sin capital",
+        capital: country.capital || "Null capital",
         area: country.area,
         poblacion: country.population,
       }));
-
       Country?.bulkCreate(countries);
+      console.log("DB inicializada");
     })
-    .then(() => Country?.findAll())
+    .then(() => Country?.findAll({ include: Activity }))
     .then((countries) => res.status(200).send(countries))
-    .catch((err) => {
-      console.log(err);
+    .catch((error) => {
+      console.log(error.cause);
       res
         .status(400)
         .send({ error: "Something went wrong while loading countries..." });

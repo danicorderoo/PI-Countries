@@ -1,5 +1,21 @@
+@font-face {
+  font-family: "SIMPLIFICA";
+  src: url("./assets/SIMPLIFICA.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BrannbollFet";
+  src: url("./assets/BrannbollFet.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BrannbollSmal";
+  src: url("./assets/BrannbollSmal.ttf") format("truetype");
+}
+
 .App {
   text-align: center;
+  background-color: #2d3134;
 }
 
 .App-logo {
