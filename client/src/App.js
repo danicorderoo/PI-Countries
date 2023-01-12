@@ -6,7 +6,7 @@ import DetailID from "./components/Detail/DetailID";
 import Create from "./components/Activity/Activity";
 import Landing from "./components/LandingPage/LandingPage";
 import Top from "./components/Top/Top";
-import Loading from "./components/Loading/Loading";
+// import Loading from "./components/Loading/Loading";
 import About from "./components/About/About";
 import { Routes, Route } from "react-router-dom";
 import { useDispatch } from "react-redux";
