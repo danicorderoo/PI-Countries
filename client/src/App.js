@@ -13,6 +13,9 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import * as actions from "../src/redux/actions";
+import axios from "axios";
+
+axios.defaults.baseURL = process.env.REACT_BACKEND_URL;
 
 function App() {
   const location = useLocation();

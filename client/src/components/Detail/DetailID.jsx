@@ -63,24 +63,23 @@ export default function DetailID(props) {
         <div className={theme ? styles.themeDay : styles.themeNigth}>
           <Header continente={countrie.continente} />
 
-          <div className={styles.bandera}>
-            <img src={countrie?.bandera} alt={countrie?.nombre} />
-          </div>
-
-          {!top ? null : (
-            <div>
-              <div className={styles.planeOn}></div>
-              <div className={styles.planeOff}></div>
-              <div className={styles.topText}>
-                <h2>Is TOP</h2>
-                <button onClick={handleClick}>Travel5!</button>
-              </div>
-            </div>
-          )}
-
           {display ? <Presentations countrie={countrie.nombre} /> : null}
 
           <div className={styles.tarjeta}>
+            <div className={styles.bandera}>
+              <img src={countrie?.bandera} alt={countrie?.nombre} />
+            </div>
+
+            {!top ? null : (
+              <div>
+                <div className={styles.planeOn}></div>
+                <div className={styles.planeOff}></div>
+                <div className={styles.topText}>
+                  <h2>Is TOP</h2>
+                  <button onClick={handleClick}>Travel5!</button>
+                </div>
+              </div>
+            )}
             <div className={styles.titulo}>
               <h2>{`${countrie?.nombre} / ${countrie?.id}`}</h2>
             </div>
@@ -103,7 +102,8 @@ export default function DetailID(props) {
           <button
             className={windowActivity ? styles.activityOn : styles.activityOff}
             name="theme"
-            onClick={() => onChangeActivity()}></button>
+            onClick={() => onChangeActivity()}
+          ></button>
         </div>
       ) : (
         <Loading />

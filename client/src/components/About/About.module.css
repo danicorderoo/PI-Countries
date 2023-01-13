@@ -24,6 +24,12 @@
   text-decoration: underline double rgba(234, 105, 90, 1);
 }
 
+.unorderedList {
+  display: flex;
+  flex-direction: row;
+  margin-top: 100px;
+}
+
 .listItem {
   display: flex;
   flex-direction: column;
@@ -42,7 +48,6 @@
   color: black;
   box-shadow: 0px 0px 5px #dc4133;
   text-decoration: none;
-  cursor: none;
 }
 .listItem:hover {
   background-color: rgba(234, 105, 90, 0.8);
@@ -79,7 +84,6 @@
 .botones img {
   width: 60px;
   height: 60px;
-  margin-left: 10px;
 }
 
 .botones {
@@ -124,5 +128,14 @@
   box-shadow: 0px 0px 10px rgba(234, 105, 90, 0.8);
   transition: 1.5s;
   transition: 1s;
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
   color: black;
 }

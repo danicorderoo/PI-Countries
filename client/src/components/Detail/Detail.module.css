@@ -13,8 +13,8 @@
   justify-content: space-around;
   background-color: rgba(0, 0, 0, 0.5);
   margin-left: 182.7px;
-  height: 20em;
-  width: 20.65em;
+  height: max-content;
+  width: 21.3em;
   padding: 5px;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
@@ -28,6 +28,8 @@
 }
 
 .titulo {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   font-size: 1.7em;
   font-weight: bold;
@@ -35,14 +37,13 @@
 
 .subTitulo {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   gap: 7px;
   font-weight: normal;
 }
 
 .bandera {
-  position: relative;
-  margin-left: -530px;
   animation-name: gira;
   animation-duration: 2s;
   animation-timing-function: ease-in-out;
@@ -112,8 +113,8 @@
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
-  top: 35%;
-  left: 27%;
+  top: -30%;
+  left: 45%;
 }
 
 @keyframes translate {
@@ -142,8 +143,8 @@
   animation-timing-function: ease-in-out;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
-  top: 45%;
-  left: 32%;
+  top: -20%;
+  left: 40%;
   transform: rotate(300deg);
 }
 
@@ -168,7 +169,6 @@
 }
 
 .topText button {
-  position: absolute;
   font-family: "BrannbollSmal";
   color: rgb(220, 65, 51);
   font-size: 1.2em;
@@ -180,15 +180,11 @@
   animation-timing-function: ease-out;
   animation-iteration-count: infinite;
   animation-direction: alternate-reverse;
-  margin-top: 6%;
-  margin-left: -25%;
   opacity: 0;
   cursor: pointer;
-  z-index: 1;
 }
 
 .topText h2 {
-  position: absolute;
   font-family: "SIMPLIFICA";
   color: #afe8fd;
   font-size: 1.2em;

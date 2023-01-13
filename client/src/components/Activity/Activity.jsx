@@ -205,7 +205,8 @@ export default function Create(props) {
               <select
                 name="temporada"
                 id="temporada"
-                onChange={handleInputChange}>
+                onChange={handleInputChange}
+              >
                 <option>Spring</option>
                 <option>Summer</option>
                 <option>Fall</option>
@@ -253,7 +254,7 @@ export default function Create(props) {
                 onChange={handleInputChange}
               />
               {selectCountrie.length ? (
-                <p></p>
+                <p className={styles.danger}>READY</p>
               ) : (
                 <p className={styles.danger}>
                   You must select a country for the activity

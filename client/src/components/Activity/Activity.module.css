@@ -158,9 +158,6 @@
 .Buttons {
   height: 30px;
   width: 60px;
-  position: absolute;
-  top: 178vh;
-  left: 47vh;
   border-radius: 10px;
   background-color: rgba(220, 65, 51, 1);
   transition-duration: 1s;
@@ -179,9 +176,6 @@
 .ButtonsOff {
   height: 30px;
   width: 60px;
-  position: absolute;
-  top: 178vh;
-  left: 47vh;
   border-radius: 10px;
   background-color: hsla(0, 0%, 18%, 0.503);
   transition-duration: 1s;

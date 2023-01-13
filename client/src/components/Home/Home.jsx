@@ -9,7 +9,7 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import * as actions from "../../redux/actions/index";
 import { useState } from "react";
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 export default function Home(props) {
   let countries = useSelector((state) => state.myCountries);
@@ -64,14 +64,16 @@ export default function Home(props) {
           <button
             className={filter ? styles.filterOn : styles.filterOff}
             name="theme"
-            onClick={() => onChangeFilter()}></button>
+            onClick={() => onChangeFilter()}
+          ></button>
 
           <Paginado
             currentPage={Page}
             goToNextPage={goToNextPage}
             goToPreviousPage={goToPreviousPage}
             goToFirstPage={goToFirstPage}
-            goToLastPage={goToLastPage}></Paginado>
+            goToLastPage={goToLastPage}
+          ></Paginado>
           <div className={styles.cards}>
             {getPaginatedData().length > 0 ? (
               !getPaginatedData()[0].hasOwnProperty("notFound") ? (
@@ -97,7 +99,8 @@ export default function Home(props) {
             goToNextPage={goToNextPage}
             goToPreviousPage={goToPreviousPage}
             goToFirstPage={goToFirstPage}
-            goToLastPage={goToLastPage}></Paginado>
+            goToLastPage={goToLastPage}
+          ></Paginado>
         </div>
       ) : (
         <Loading />

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const ADD_ALL_COUNTRIES = "ADD_ALL_COUNTRIES";
 export const ADD_COUNTRIE_NAME = "ADD_COUNTRIE_NAME";
 export const DELETE_COUNTRIE_NAME = "DELETE_COUNTRIE_NAME";
@@ -19,47 +21,49 @@ export const DELETE_SELECT_COUNTRIE = "DELETE_SELECT_COUNTRIE";
 export const GET_ACTIVITY = "GET_ACTIVITY";
 export const DELETE_ACT = "DELETE_ACT";
 
-export const addAllCountries = () => (dispatch) => {
-  return fetch(`http://localhost:3001/countries`)
-    .then((data) => data.json())
-    .then((data) => {
+export const addAllCountries = () => {
+  return async (dispatch) => {
+    try {
+      const conuntries = await axios.get("/countries");
       dispatch({
         type: ADD_ALL_COUNTRIES,
-        payload: data,
+        payload: conuntries.data,
       });
-    })
-    .catch((error) => {
+    } catch (error) {
       window.alert("Error in API");
-    });
+      console.log(error);
+    }
+  };
 };
 
-export const addCountrieName = (name) => (dispatch) => {
-  return fetch(`http://localhost:3001/countries?name=${name}`)
-    .then((data) => data.json())
-    .then((data) => {
-      if (data.nombre) {
-        dispatch({
-          type: ADD_COUNTRIE_NAME,
-          payload: data,
-        });
-      } else {
-        window.alert("There is no country with that name");
-      }
-    });
+export const addCountrieName = (name) => {
+  return async (dispatch) => {
+    try {
+      const conuntrie = await axios.get(`/countries?name=${name}`);
+      dispatch({
+        type: ADD_COUNTRIE_NAME,
+        payload: conuntrie.data,
+      });
+    } catch (error) {
+      window.alert("Error in API");
+      console.log(error);
+    }
+  };
 };
 
 export const getActivity = () => (dispatch) => {
-  return fetch(`http://localhost:3001/activities`)
-    .then((data) => data.json())
-    .then((data) => {
+  return async (dispatch) => {
+    try {
+      const conuntrie = await axios.get(`/activities`);
       dispatch({
         type: GET_ACTIVITY,
-        payload: data,
+        payload: conuntrie.data,
       });
-    })
-    .catch((error) => {
+    } catch (error) {
       window.alert("Error in API");
-    });
+      console.log(error);
+    }
+  };
 };
 
 export const DeleteAct = () => {
